@@ -1,0 +1,172 @@
+@import 'tailwindcss' source(none);
+@import 'tw-animate-css';
+@import 'lenis/dist/lenis.css';
+
+/* Only scan app code — avoids generating invalid rules from prose/backticks elsewhere (e.g. public/*.md). */
+@source "../app/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../components/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../lib/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../hooks/**/*.{js,ts,jsx,tsx,mdx}";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #FAFAF8;
+  --foreground: #0A0A0A;
+  --card: #FFFFFF;
+  --card-foreground: #0A0A0A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0A0A0A;
+  --primary: #150ad5;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f0ed;
+  --secondary-foreground: #0a0a0a;
+  --muted: #f0f0ed;
+  --muted-foreground: #6b7071;
+  --accent: #150ad5;
+  --accent-foreground: #ffffff;
+  --destructive: #e5384f;
+  --destructive-foreground: #ffffff;
+  --border: #e4e4e0;
+  --input: #e4e4e0;
+  --ring: #150ad5;
+  --radius: 0.75rem;
+  --nav-bg: rgba(255, 255, 255, 0.6);
+  --nav-border: rgba(0, 0, 0, 0.08);
+  --nav-divider: rgba(0, 0, 0, 0.1);
+  --nav-muted: #888888;
+  --hover-bg: rgba(0, 0, 0, 0.03);
+  --combo-border: #CCCCCC;
+}
+
+.dark {
+  --background: #050505;
+  --foreground: #F5F1E6;
+  --card: #0C0C0C;
+  --card-foreground: #F5F1E6;
+  --popover: #0C0C0C;
+  --popover-foreground: #F5F1E6;
+  --primary: #150ad5;
+  --primary-foreground: #f5f1e6;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #f5f1e6;
+  --muted: #1a1a1a;
+  --muted-foreground: #96a4a5;
+  --accent: #150ad5;
+  --accent-foreground: #f5f1e6;
+  --destructive: #f66485;
+  --destructive-foreground: #f5f1e6;
+  --border: #1a1a1a;
+  --input: #1a1a1a;
+  --ring: #150ad5;
+  --nav-bg: rgba(255, 255, 255, 0.04);
+  --nav-border: rgba(255, 255, 255, 0.08);
+  --nav-divider: rgba(255, 255, 255, 0.1);
+  --nav-muted: #7a7a7a;
+  --hover-bg: rgba(255, 255, 255, 0.03);
+  --combo-border: #333333;
+}
+
+@theme inline {
+  /* next/font on <html> sets --font-inter / --font-geist-mono / --font-dm-mono (see app/layout.tsx) */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-uncut-sans), ui-sans-serif, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-nav-bg: var(--nav-bg);
+  --color-nav-border: var(--nav-border);
+  --color-nav-divider: var(--nav-divider);
+  --color-nav-muted: var(--nav-muted);
+  --color-hover-bg: var(--hover-bg);
+  --color-combo-border: var(--combo-border);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+    /* Fixed pill nav + padding — in-page anchors land clearly below the bar */
+    scroll-padding-top: 5.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer utilities {
+  .text-label {
+    font-size: 0.6875rem;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .text-label-sm {
+    font-size: 0.625rem;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+/* Logo Mark hero — slow vertical pan through an oversized gradient */
+@keyframes logo-mark-gradient-pan {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+.logo-mark-gradient-animated {
+  background-image: linear-gradient(
+    180deg,
+    #0019ff 0%,
+    #2f4ef5 20%,
+    #5570f0 42%,
+    #7588ea 60%,
+    #8c9fe8 78%,
+    #3d58e6 100%
+  );
+  background-size: 100% 240%;
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+  animation: logo-mark-gradient-pan 14s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-mark-gradient-animated {
+    animation: none;
+    background-position: 50% 45%;
+  }
+}
