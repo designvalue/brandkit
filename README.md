@@ -78,8 +78,10 @@ For companies that are growing—and need their brand to keep up.
 
 ## Screenshots
 
-![Cover](public/screens/Cover.png)
+![Screen 11](public/screens/screens11.png)
+---
 ![Screen 01](public/screens/screens01.png)
+---
 ![Screen 02](public/screens/screens02.png)
 ![Screen 03](public/screens/screens03.png)
 ![Screen 04](public/screens/screens04.png)
@@ -89,7 +91,7 @@ For companies that are growing—and need their brand to keep up.
 ![Screen 08](public/screens/screens08.png)
 ![Screen 09](public/screens/screens09.png)
 ![Screen 10](public/screens/screens10.png)
-![Screen 11](public/screens/screens11.png)
+
 
 ---
 
