@@ -2,6 +2,8 @@
 import type { Metadata, Viewport } from "next"
 import { Inter, Geist_Mono, DM_Mono } from "next/font/google"
 import localFont from "next/font/local"
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { MotionRoot } from "@/components/motion-root"
 import { SmoothScroll } from "@/components/smooth-scroll"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -121,6 +123,8 @@ export default function RootLayout({
             <Toaster richColors position="bottom-center" />
           </MotionRoot>
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
