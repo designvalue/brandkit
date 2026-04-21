@@ -1,3 +1,5 @@
+![Cover](public/screens/Cover.png)
+
 # BrandKit
 
 **A living home for your brand.**  
@@ -6,7 +8,6 @@
 
 ---
 
-![Cover](public/screens/Cover.png)
 ## Overview
 
 BrandKit brings your entire brand system into one place—clear, structured, and always up to date.
