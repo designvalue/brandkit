@@ -6,6 +6,7 @@
 
 ---
 
+![Cover](public/screens/Cover.png)
 ## Overview
 
 BrandKit brings your entire brand system into one place—clear, structured, and always up to date.
@@ -71,36 +72,6 @@ For companies that are growing—and need their brand to keep up.
 - Typography  
 - Imagery  
 - Icons  
-
----
-
-## Screenshots
-
-Full-page captures from a local run (desktop width). The **Imagery** section in the app lives at `/photo`.
-
-### Home
-
-![Home page](docs/screenshots/home.png)
-
-### Logo
-
-![Logo page](docs/screenshots/logo.png)
-
-### Color
-
-![Color page](docs/screenshots/color.png)
-
-### Typography
-
-![Typography page](docs/screenshots/typography.png)
-
-### Imagery
-
-![Imagery (Photo) page](docs/screenshots/imagery.png)
-
-### Icons
-
-![Icons page](docs/screenshots/icons.png)
 
 ---
 
